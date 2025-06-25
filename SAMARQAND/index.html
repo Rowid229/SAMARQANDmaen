@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMARQAND - Candy & Chocolate Distribution</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="SAMARQAND Logo" class="site-logo">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+    <section class="hero">
+        <video class="bg-video" autoplay loop muted playsinline>
+          <source src="vid1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <h2>Sweetening the World, One Candy at a Time</h2>
+            <p>Your trusted partner in candy & chocolate distribution, wholesale, import, and export.</p>
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2 class="fade-in">About Us</h2>
+            <p class="fade-in-left">SAMARQAND is a premier distributor and wholesaler of high-quality candies and chocolates, renowned for its commitment to excellence in the global sweets market. Specializing in both import and export services, we connect international suppliers and local retailers, delivering a curated selection of premium confections from around the world.
+
+                With years of experience in the industry, SAMARQAND has built a strong reputation for reliability, efficiency, and exceptional customer service. Our global sourcing network allows us to offer an extensive portfolio of renowned brands and artisanal treats, ensuring that our clients receive only the finest products tailored to their market needs.
+                
+                Whether you operate a supermarket chain, boutique candy shop, or large-scale distribution business, SAMARQAND is your trusted partner for seamless logistics, competitive pricing, and sweets that delight.</p>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <h2 class="fade-in">Our Services</h2>
+            <div class="services-cards">
+                <div class="service-card service1 fade-in-left">
+                    <div class="service-icon">🍬</div>
+                    <h3>Wholesale Distribution</h3>
+                    <p>Efficient and reliable distribution of candies and chocolates to retailers and wholesalers worldwide.</p>
+                </div>
+                <div class="service-card service2 fade-in-right">
+                    <div class="service-icon">🚚</div>
+                    <h3>Import & Export Logistics</h3>
+                    <p>Seamless import and export solutions, connecting global suppliers with local markets for premium sweets.</p>
+                </div>
+                <div class="service-card service3 fade-in-left">
+                    <div class="service-icon">✅</div>
+                    <h3>Quality Assurance</h3>
+                    <p>Strict quality control to ensure every product meets the highest standards of taste and safety.</p>
+                </div>
+                <div class="service-card service4 fade-in-right">
+                    <div class="service-icon">🤝</div>
+                    <h3>Retail Partnerships</h3>
+                    <p>Building strong relationships with retailers to deliver tailored solutions and exclusive products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products">
+        <div class="container">
+            <h2 class="fade-in">Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card fade-in-left">
+                    <img src=candy.jpg alt="Assorted Candies" class="fade-in-left">
+                    <h3>Assorted Candies</h3>
+                </div>
+                <div class="product-card fade-in-right">
+                    <img src=chocobreak.png alt="Premium Chocolates" class="fade-in-right">
+                    <h3>Premium Chocolates</h3>
+                </div>
+                <div class="product-card fade-in-left">
+                    <img src=importedsweets.jpg alt="Imported Sweets" class="fade-in-left">
+                    <h3>Imported Sweets</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="fade-in">Contact Us</h2>
+            <form id="contactForm" action="https://formspree.io/f/mblypary" method="POST" class="fade-in">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="formMessage" class="fade-in"></div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SAMARQAND. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

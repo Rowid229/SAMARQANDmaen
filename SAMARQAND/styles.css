@@ -1,0 +1,325 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f8fb;
+    color: #233044;
+    background-image: url('logo.png');
+    background-size: 100px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+header {
+    background: #e3eefc;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+nav a {
+    text-decoration: none;
+    color: #692a2a;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #03eef1;
+}
+.bg-video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(36, 52, 69, 0.25); /* subtle dark overlay for readability */
+    z-index: 1;
+    pointer-events: none;
+}
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #692a2a;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.cta-btn {
+    background: #692a2a;
+    color: #fff;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.cta-btn:hover {
+    background: #692a2a;
+}
+section {
+    padding: 60px 0;
+}
+section h2 {
+    color: #692a2a;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+#about .container,
+#services .container,
+#products .container,
+#contact .container {
+    text-align: center;
+}
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+}
+.services-list li {
+    background: #fafdff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 24px 32px;
+    font-size: 1.1rem;
+    min-width: 220px;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s, background 0.2s, color 0.2s;
+    color: #233044;
+}
+.services-list li:hover {
+    box-shadow: 0 8px 24px rgba(79,138,139,0.18);
+    background: #e3eefc;
+    color: #4f8a8b;
+    transform: scale(1.05);
+}
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.product-card {
+    background: #fafdff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+    color: #233044;
+}
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: filter 0.25s;
+}
+.product-card h3 {
+    margin: 0;
+    color: #2a4d69;
+}
+.product-card:hover {
+    transform: translateY(-12px) scale(1.06);
+    box-shadow: 0 12px 32px rgba(79,138,139,0.18);
+    filter: brightness(1.08);
+}
+.product-card:hover img {
+    filter: brightness(1.15) saturate(1.1);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+form input, form textarea {
+    padding: 12px;
+    border: 1px solid #b6d0e2;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: none;
+    background: #fafdff;
+    color: #233044;
+}
+form button {
+    background: #4f8a8b;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #2a4d69;
+    color: #fff;
+}
+#formMessage {
+    margin-top: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+footer {
+    background: #2a4d69;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+}
+@media (max-width: 900px) {
+    .products-grid, .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+.services-cards {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+.service-card {
+    flex: 1 1 220px;
+    max-width: 300px;
+    background: #fafdff;
+    border-radius: 24px;
+    box-shadow: 0 2px 12px rgba(36,52,69,0.07);
+    padding: 32px 24px 28px 24px;
+    text-align: center;
+    transition: transform 0.22s, box-shadow 0.22s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+}
+.service-card .service-icon {
+    font-size: 3rem;
+    margin-bottom: 18px;
+}
+.service-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.3rem;
+    color: #2a4d69;
+}
+.service-card p {
+    color: #233044;
+    font-size: 1rem;
+    margin: 0;
+}
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(79,138,139,0.18);
+}
+.service1 {
+    background: #ffe5c7;
+}
+.service2 {
+    background: #d6f6ff;
+}
+.service3 {
+    background: #e6e6fa;
+}
+.service4 {
+    background: #f7f6d9;
+}
+@media (max-width: 900px) {
+    .services-cards {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .service-card {
+        max-width: 90%;
+    }
+}
+.site-logo {
+    max-height: 120px;
+    vertical-align: middle;
+    margin-right: 18px;
+    display: inline-block;
+}
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: none;
+}
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.7s ease, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.fade-in-left.visible {
+    opacity: 1;
+    transform: none;
+}
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.7s ease, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.fade-in-right.visible {
+    opacity: 1;
+    transform: none;
+} 

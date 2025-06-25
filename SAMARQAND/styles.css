@@ -190,7 +190,7 @@ form input, form textarea {
     color: #233044;
 }
 form button {
-    background: #4f8a8b;
+    background: #692a2a;
     color: #fff;
     border: none;
     padding: 12px;
@@ -209,7 +209,7 @@ form button:hover {
     font-weight: bold;
 }
 footer {
-    background: #2a4d69;
+    background: #692a2a;;
     color: #fff;
     text-align: center;
     padding: 18px 0;

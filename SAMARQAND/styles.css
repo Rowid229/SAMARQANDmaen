@@ -43,7 +43,7 @@ nav a {
     transition: color 0.2s;
 }
 nav a:hover {
-    color: #03eef1;
+    color: #b94949;
 }
 .bg-video {
     position: absolute;
@@ -79,14 +79,14 @@ nav a:hover {
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #692a2a;
+    color: #233044;
 }
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
 .cta-btn {
-    background: #692a2a;
+    background: #233044;
     color: #fff;
     padding: 14px 36px;
     border: none;
@@ -103,6 +103,8 @@ nav a:hover {
 #about {
     position: relative;
     z-index: 0;
+    height: 400px;
+    line-height: 1.5;
     /* Remove background-image from here if present */
 }
 #about::before {
@@ -176,31 +178,33 @@ section h2 {
     transform: scale(1.05);
 }
 .products-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 30px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 15px;
+    justify-items: center;
 }
 .product-card {
     background: #fafdff;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     padding: 20px;
-    width: 400px;
+    width: 280px;
+    height: 250px;
     text-align: center;
     transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
-    color: #233044;
+    color: #692a2a;
 }
 .product-card img {
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 180px;
     border-radius: 12px;
     margin-bottom: 12px;
     transition: filter 0.25s;
 }
-.product-card h3 {
+.product-card p {
     margin: 0;
-    color: #2a4d69;
+    color: #692a2a;
+    font-size: 1.2rem;
 }
 .product-card:hover {
     transform: translateY(-12px) scale(1.06);
@@ -280,14 +284,18 @@ footer a:hover {
     text-decoration: none;
 }
 @media (max-width: 900px) {
-    .products-grid, .services-list {
-        flex-direction: column;
-        align-items: center;
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     nav {
         float: none;
         text-align: center;
         margin-top: 10px;
+    }
+}
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -402,4 +410,75 @@ header .container {
 .fade-in-right.visible {
     opacity: 1;
     transform: none;
+}
+
+/* Partners Section Styling */
+
+#Key-Partners {
+    position: relative;
+    padding: 60px 0;
+    z-index: 0;
+    /* Remove background-image from here if present */
+}
+
+#Key-Partners::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('./f62ea25e5e12b89527c61a4c6b7817b9.jpg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+    opacity: 0.5; /* Opaque effect */
+    z-index: 0;
+    pointer-events: none;
+}
+
+#Key-Partners > * {
+    position: relative;
+    z-index: 1;
+}
+
+.Partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 32px;
+    justify-items: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.Partners-grid img {
+    width: 240px;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 12px;
+    display: block;
+}
+
+.Partners-grid img:hover {
+    transform: scale(1.06);
+}
+
+@media (max-width: 700px) {
+    .Partners-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 16px;
+        max-width: 98vw;
+    }
+    .Partners-grid img {
+        width: 120px;
+        height: 70px;
+        padding: 6px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px; /* 20px offset from the top when scrolling to anchors */
 }

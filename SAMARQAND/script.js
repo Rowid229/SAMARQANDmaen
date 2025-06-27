@@ -20,30 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.15 });
     fadeEls.forEach(el => observer.observe(el));
-
-    // Carousel/Product Slider Logic
-    const carousel = document.querySelector('.products-grid');
-    const cards = document.querySelectorAll('.product-card');
-    let index = 0;
-
-    if (carousel && cards.length > 0) {
-        const nextBtn = document.querySelector('.next');
-        const prevBtn = document.querySelector('.prev');
-        
-        if (nextBtn && prevBtn) {
-            nextBtn.onclick = () => {
-                index = (index + 1) % cards.length;
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-            };
-
-            prevBtn.onclick = () => {
-                index = (index - 1 + cards.length) % cards.length;
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-            };
-
-            setInterval(() => {
-                nextBtn.click();
-            }, 3000);
-        }
-    }
 }); 

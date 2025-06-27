@@ -20,4 +20,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.15 });
     fadeEls.forEach(el => observer.observe(el));
+<<<<<<< HEAD
 }); 
+=======
+}); 
+
+const form = document.getElementById('form1');
+const msg  = document.getElementById('message');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();                
+  const data = new FormData(form);
+
+  const res = await fetch(form.action, {
+    method: form.method,
+    body:   data,
+    headers:{ 'Accept': 'application/json' }
+  });
+
+  if (res.ok) {
+    msg.textContent = '✅ Thanks for your message!';
+    form.reset();
+  } else {
+    msg.textContent = '❌ Oops! Something went wrong.';
+  }
+});
+>>>>>>> e73a2761ff0c595cb3ff0b111aadcf43c325dbb8

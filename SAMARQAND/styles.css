@@ -37,7 +37,9 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 25px;
-}
+} 
+
+
 nav a {
     text-decoration: none;
     color: #692a2a;

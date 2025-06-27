@@ -99,6 +99,35 @@ nav a:hover {
 .cta-btn:hover {
     background: #692a2a;
 }
+
+#about {
+    position: relative;
+    z-index: 0;
+    /* Remove background-image from here if present */
+}
+#about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(./360_F_1231657473_stainTUA9XmkrSvExSGylxsfrwiuqfOE.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* Opaque effect */
+    z-index: 0;
+    pointer-events: none;
+}
+#about > * {
+    position: relative;
+    z-index: 1;
+}
+
+#about p{
+    margin-right: 40px;
+    margin-left: 40px;
+    font-size: 20px;;
+}
+
 section {
     padding: 60px 0;
 }
@@ -114,6 +143,13 @@ section h2 {
 #contact .container {
     text-align: center;
 }
+
+#services .container {
+    width: 98%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 .services-list {
     display: flex;
     flex-wrap: wrap;
@@ -141,7 +177,7 @@ section h2 {
 }
 .products-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 30px;
     justify-content: center;
 }
@@ -150,7 +186,7 @@ section h2 {
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     padding: 20px;
-    width: 260px;
+    width: 400px;
     text-align: center;
     transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
     color: #233044;
@@ -172,8 +208,20 @@ section h2 {
     filter: brightness(1.08);
 }
 .product-card:hover img {
-    filter: brightness(1.15) saturate(1.1);
+    filter: brightness(1.05) saturates(1.05);
 }
+
+button {
+    background: #692a2a;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -210,11 +258,26 @@ form button:hover {
     font-weight: bold;
 }
 footer {
-    background: #692a2a;;
+    background: #692a2a;
     color: #fff;
     text-align: center;
-    padding: 18px 0;
-    margin-top: 40px;
+    padding: 24px 0 18px 0;   /* More top padding for space */
+    margin-top: 60px;         /* More space above footer */
+    font-size: 1.05rem;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+}
+footer a {
+    color: #03eef1;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #fff;
+    text-decoration: none;
 }
 @media (max-width: 900px) {
     .products-grid, .services-list {
@@ -227,18 +290,25 @@ footer {
         margin-top: 10px;
     }
 }
+
+#services{
+    background-color: #233044;
+}
+
 .services-cards {
     display: flex;
     gap: 32px;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 32px;
+    margin-bottom: 32px;;
 }
 .service-card {
-    flex: 1 1 220px;
-    max-width: 300px;
+    flex: 1 1 250px;
+    max-width: 250px;
+    height: 250px;
     background: #fafdff;
-    border-radius: 24px;
+    border-radius: 20%;
     box-shadow: 0 2px 12px rgba(36,52,69,0.07);
     padding: 32px 24px 28px 24px;
     text-align: center;
@@ -250,11 +320,18 @@ footer {
 }
 .service-card .service-icon {
     font-size: 3rem;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
+
+.service-icon img {
+    width:80px;
+    height: 80px;
+    border-radius: 40px;
+}
+
 .service-card h3 {
     margin: 0 0 12px 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #2a4d69;
 }
 .service-card p {
@@ -267,16 +344,16 @@ footer {
     box-shadow: 0 8px 32px rgba(79,138,139,0.18);
 }
 .service1 {
-    background: #ffe5c7;
+    background: white; /* matches header and hover */
 }
 .service2 {
-    background: #d6f6ff;
+    background: white; /* soft accent */
 }
 .service3 {
-    background: #e6e6fa;
+    background: white; /* light blue */
 }
 .service4 {
-    background: #f7f6d9;
+    background: white; /* site background */
 }
 @media (max-width: 900px) {
     .services-cards {
@@ -325,4 +402,4 @@ header .container {
 .fade-in-right.visible {
     opacity: 1;
     transform: none;
-} 
+}

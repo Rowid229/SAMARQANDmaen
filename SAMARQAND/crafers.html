@@ -9,11 +9,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%);
+            color: #2C1810;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
+            box-shadow: 0 4px 20px rgba(44, 24, 16, 0.15);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2C1810;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: #D4AF37;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(to right, #D4AF37, #CD853F);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
         .crafers-hero {
-            background: linear-gradient(135deg, #6d12b6 0%, #D2691E 100%);
-            padding: 120px 0 80px 0;
+            background: linear-gradient(135deg, #F5F5DC 0%, #E6E6FA 50%, #F0E68C 100%);
+            padding: 220px 0 80px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
         
         .crafers-hero::before {
@@ -21,65 +87,68 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(139, 69, 19, 0.3) 0%, rgba(210, 105, 30, 0.2) 100%);
-            z-index: 1;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23D4AF37" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23CD853F" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23D4AF37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             pointer-events: none;
-        }
-        
-        .crafers-hero .container {
-            position: relative;
-            z-index: 2;
         }
         
         .crafers-logo {
             width: 200px;
-            height: auto;
+            height: 200px;
+            border-radius: 50%;
             margin-bottom: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.3);
+            box-shadow: 0 10px 30px rgba(44, 24, 16, 0.2);
+            border: 4px solid #D4AF37;
         }
         
         .crafers-title {
-            font-size: 3rem;
-            color: #FFFFFF;
+            font-size: 3.5rem;
+            color: #2C1810;
             margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 4px 8px rgba(44, 24, 16, 0.3);
+            position: relative;
+        }
+        
+        .crafers-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #D4AF37, #CD853F);
+            border-radius: 2px;
         }
         
         .crafers-subtitle {
-            font-size: 1.3rem;
-            color: #FFFFFF;
+            font-size: 1.2rem;
+            color: #5D4037;
             margin-bottom: 40px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            line-height: 1.6;
         }
         
         .back-btn {
-            background: linear-gradient(90deg, #D2691E 0%, #CD853F 100%);
-            color: #fff;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
             display: inline-block;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            box-shadow: 0 4px 16px rgba(210, 105, 30, 0.3);
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #D4AF37 0%, #CD853F 100%);
+            color: #2C1810;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
         
         .back-btn:hover {
-            background: linear-gradient(90deg, #8B4513 0%, #D2691E 100%);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(210, 105, 30, 0.4);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #CD853F 0%, #D4AF37 100%);
         }
         
         .products-section {

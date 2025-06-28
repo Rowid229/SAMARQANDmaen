@@ -644,7 +644,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
 }
 
 .contact-info {
@@ -761,12 +761,21 @@ html {
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
 }
 
 .social-link:hover {
     background: #233044;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(105, 42, 42, 0.3);
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-link:active {
+    transform: translateY(0);
 }
 
 .contact-form-box {

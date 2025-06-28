@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.15 });
     fadeEls.forEach(el => observer.observe(el));
-<<<<<<< HEAD
-}); 
-=======
 }); 
 
 const form = document.getElementById('form1');
@@ -45,4 +42,3 @@ form.addEventListener('submit', async e => {
     msg.textContent = '❌ Oops! Something went wrong.';
   }
 });
->>>>>>> e73a2761ff0c595cb3ff0b111aadcf43c325dbb8

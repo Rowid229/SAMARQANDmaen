@@ -240,7 +240,7 @@ section h2 {
 }
 
 #products {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+    background: #2c3e50;
     border-radius: 20px;
     margin: 40px 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
@@ -266,18 +266,27 @@ section h2 {
 }
 .scrolling-wrapper {
     overflow: hidden;
-    padding: 2rem 0;
-  }
-  
+    width: 100%;
+    position: relative;
+    background: #2c3e50;
+    padding: 32px 0;
+}
 
-/* Replace this */
 .products-grid {
     display: flex;
-    gap: 2rem;
+    gap: 32px;
     width: max-content;
     animation: scroll-left 30s linear infinite;
-  }
-  
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 .product-card {
     background: #fafdff;
     border-radius: 16px;
@@ -411,17 +420,20 @@ footer a:hover {
 }
 
 .services-cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 32px;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
     margin-top: 32px;
-    margin-bottom: 32px;;
+    margin-bottom: 32px;
 }
+
 .service-card {
     flex: 1 1 250px;
-    max-width: 250px;
-    height: 250px;
+    max-width: 270px;
+    height: 260px;
     background: #fafdff;
     border-radius: 20%;
     box-shadow: 0 2px 12px rgba(36,52,69,0.07);
@@ -474,9 +486,9 @@ footer a:hover {
 }
 @media (max-width: 900px) {
     .services-cards {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
         gap: 20px;
-        align-items: center;
     }
     .service-card {
         max-width: 90%;
@@ -525,7 +537,7 @@ header .container {
     position: relative;
     padding: 60px 0;
     z-index: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #ff0200 0%, #0d489d 50%, #9a7fac 100%);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     margin: 40px 20px;
@@ -537,12 +549,8 @@ header .container {
     content: "";
     position: absolute;
     inset: 0;
-    background: 
-        linear-gradient(135deg, rgba(105, 42, 42, 0.1) 0%, rgba(35, 48, 68, 0.1) 100%),
-        url('all-comments-add-change-something-to-this-blank-world-map-v0-kml311xq3mwe1.webp') center center/cover no-repeat;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    /* Remove previous background and use only the gradient if you want it solid */
+    background: none;
     z-index: 0;
     pointer-events: none;
     border-radius: 20px;
@@ -572,20 +580,10 @@ header .container {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     padding: 20px;
     display: block;
-    filter: grayscale(100%) brightness(0.8);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .Partners-grid img:hover {
     transform: scale(1.08) translateY(-8px);
-    filter: grayscale(0%) brightness(1.1) contrast(1.1);
-    box-shadow: 0 12px 32px rgba(105, 42, 42, 0.3);
-    border-color: rgba(105, 42, 42, 0.4);
-    background: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 700px) {
@@ -924,4 +922,3 @@ form textarea {
       transform: translateX(-50%);
     }
   }
-  

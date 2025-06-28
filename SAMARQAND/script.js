@@ -9,6 +9,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Handle social media links explicitly
+    const whatsappLink = document.getElementById('whatsapp-link');
+    const facebookLink = document.getElementById('facebook-link');
+    const instagramLink = document.getElementById('instagram-link');
+
+    if (whatsappLink) {
+        whatsappLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.open('https://wa.me/962795911913', '_blank', 'noopener,noreferrer');
+        });
+    }
+
+    if (facebookLink) {
+        facebookLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.open('https://www.facebook.com/SAMARQAND', '_blank', 'noopener,noreferrer');
+        });
+    }
+
+    if (instagramLink) {
+        instagramLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.open('https://www.instagram.com/SAMARQAND', '_blank', 'noopener,noreferrer');
+        });
+    }
+
     // Scroll-triggered fade-in animations
     const fadeEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
     const observer = new IntersectionObserver((entries) => {

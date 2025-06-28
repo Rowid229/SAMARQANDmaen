@@ -42,3 +42,31 @@ form.addEventListener('submit', async e => {
     msg.textContent = '❌ Oops! Something went wrong.';
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const grid = document.querySelector('.products-grid');
+    const clone = grid.cloneNode(true);
+    clone.classList.add('products-grid-clone');
+    grid.parentNode.appendChild(clone);
+
+    // Set widths for seamless scroll
+    const totalWidth = grid.scrollWidth;
+    grid.style.width = totalWidth + "px";
+    clone.style.width = totalWidth + "px";
+
+    // Animate both grids together
+    grid.parentNode.style.display = "flex";
+    grid.parentNode.style.flexWrap = "nowrap";
+    grid.parentNode.style.overflow = "hidden";
+
+    // Animation using JS for seamless effect
+    let pos = 0;
+    function animate() {
+        pos -= 1; // speed
+        if (Math.abs(pos) >= totalWidth) pos = 0;
+        grid.style.transform = `translateX(${pos}px)`;
+        clone.style.transform = `translateX(${pos + totalWidth}px)`;
+        requestAnimationFrame(animate);
+    }
+    animate();
+});

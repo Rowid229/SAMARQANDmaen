@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafers Products - SAMARQAND</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .crafers-hero {
+            background: linear-gradient(135deg, #6d12b6 0%, #D2691E 100%);
+            padding: 120px 0 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .crafers-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(139, 69, 19, 0.3) 0%, rgba(210, 105, 30, 0.2) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .crafers-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .crafers-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.3);
+        }
+        
+        .crafers-title {
+            font-size: 3rem;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .crafers-subtitle {
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .back-btn {
+            background: linear-gradient(90deg, #D2691E 0%, #CD853F 100%);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            box-shadow: 0 4px 16px rgba(210, 105, 30, 0.3);
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(90deg, #8B4513 0%, #D2691E 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(210, 105, 30, 0.4);
+        }
+        
+        .products-section {
+            padding: 80px 0;
+            background: #FDF5E6;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* Override any scrolling animations */
+            animation: none !important;
+            transform: none !important;
+        }
+        
+        .product-item {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+            /* Ensure no automatic movement */
+            animation: none !important;
+            transform: none !important;
+        }
+        
+        .product-item .slide {
+            width: 100%;
+            height: 200px;
+            transition: 0.5s;
+        }
+        
+        .product-item .slide.slide1 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            transition: .7s;
+            transform: translateY(100px);
+        }
+        
+        .product-item:hover .slide.slide1 {
+            transform: translateY(0px);
+        }
+        
+        .product-item .slide.slide2 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: .8s;
+            transform: translateY(-100px);
+            background: linear-gradient(135deg, #FFFFFF 0%, #FDF5E6 100%);
+            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.4);
+        }
+        
+        .product-item:hover .slide.slide2 {
+            transform: translateY(0);
+        }
+        
+        .product-item .slide.slide2::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #D2691E, #8B4513);
+        }
+        
+        .product-item img {
+            width: 100%;
+            max-width: 180px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #D2691E;
+            box-shadow: 0 4px 16px rgba(210, 105, 30, 0.2);
+        }
+        
+        .product-item .slide.slide2 .content h3 {
+            margin: 0 0 10px 0;
+            padding: 0;
+            font-size: 18px;
+            text-align: center;
+            color: #8B4513;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .product-item:hover .slide.slide2 .content h3 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-item .slide.slide2 .content p {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #654321;
+            font-size: 14px;
+            line-height: 1.4;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .product-item:hover .slide.slide2 .content p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-item .slide.slide2 .content .weight {
+            margin: 5px 0 0 0;
+            padding: 0;
+            text-align: center;
+            color: #D2691E;
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .product-item:hover .slide.slide2 .content .weight {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-item h3 {
+            color: #8B4513;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .product-item h3::after,
+        .product-item h3::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #D2691E, #5b138b);
+            bottom: -3px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease-out;
+        }
+        
+        .product-item h3::before {
+            top: -3px;
+            transform-origin: left;
+        }
+        
+        .product-item:hover h3::after,
+        .product-item:hover h3::before {
+            transform: scaleX(1);
+        }
+        
+        .product-item p {
+            color: #654321;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            color: #D2691E;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #8B4513;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(139, 69, 19, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .crafers-title {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 15px;
+            }
+            
+            .product-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <img src="logo.png" alt="SAMARQAND Logo" class="site-logo" style="height: 50px; margin-top:10px; margin-bottom:10px;">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Our Services</a></li>
+                    <li><a href="index.html#products">Our Products</a></li>
+                    <li><a href="index.html#Key-Partners">Key Partners</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="crafers-hero">
+        <div class="container">
+            <img src="./Partners/crafersuz_logo.jpg" alt="Crafers Logo" class="crafers-logo">
+            <h1 class="crafers-title">Crafers Products</h1>
+            <p class="crafers-subtitle">Discover the finest selection of premium candies and chocolates from Crafers, Uzbekistan's leading confectionery manufacturer.</p>
+            <a href="index.html" class="back-btn">← Back to SAMARQAND</a>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Crafers Collection</h2>
+            <div class="products-grid">
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./products/crafers 1.png" alt="Crafers Chocolate Bar">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Premium Chocolate Bar</h3>
+                            <p>Rich and creamy chocolate bar made with the finest cocoa beans from Uzbekistan. Perfect for chocolate lovers.</p>
+                            <div class="weight">Weight: 85g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./products/crafers 2.jpg" alt="Crafers Assorted Candies">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Assorted Candy Mix</h3>
+                            <p>A delightful mix of colorful candies with various flavors including fruit, caramel, and chocolate varieties.</p>
+                            <div class="weight">Weight: 120g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./products/cake up.jpg" alt="Crafers Cake Decorations">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Cake Decorations</h3>
+                            <p>Beautiful and delicious cake decorations perfect for special occasions and celebrations.</p>
+                            <div class="weight">Weight: 150g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./products/choco milk.webp" alt="Crafers Milk Chocolate">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Milk Chocolate Selection</h3>
+                            <p>Smooth and creamy milk chocolate bars available in various sizes and packaging options.</p>
+                            <div class="weight">Weight: 100g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./products/cacao.webp" alt="Crafers Dark Chocolate">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Dark Chocolate Premium</h3>
+                            <p>Intense and rich dark chocolate with high cocoa content for the true chocolate connoisseur.</p>
+                            <div class="weight">Weight: 90g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./products/coconut.webp" alt="Crafers Coconut Chocolate">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Coconut Chocolate Delight</h3>
+                            <p>Exotic coconut-flavored chocolate that combines tropical taste with premium chocolate quality.</p>
+                            <div class="weight">Weight: 75g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./Crafers Products/StrikePurple.png" alt="Crafers Premium Chocolate">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Strike Purple Collection</h3>
+                            <p>Premium chocolate collection featuring our finest ingredients and traditional recipes with a unique purple twist.</p>
+                            <div class="weight">Weight: 180g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./Crafers Products/StrikeBlack.png" alt="Crafers Gift Box">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Strike Black Edition</h3>
+                            <p>Elegant dark chocolate collection containing our most sophisticated chocolate varieties.</p>
+                            <div class="weight">Weight: 200g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./Crafers Products/Mello2.jpeg" alt="Crafers Party Pack">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Mello Party Pack</h3>
+                            <p>Perfect for celebrations with a variety of chocolate treats for all ages and tastes.</p>
+                            <div class="weight">Weight: 250g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./Crafers Products/Mello3.jpeg" alt="Crafers Family Pack">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Mello Family Pack</h3>
+                            <p>Large family-sized pack with multiple chocolate bars for sharing with loved ones.</p>
+                            <div class="weight">Weight: 350g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./Crafers Products/Jolly.jpeg" alt="Crafers Luxury Collection">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Jolly Luxury Collection</h3>
+                            <p>Our most exclusive chocolate collection with premium ingredients and elegant packaging.</p>
+                            <div class="weight">Weight: 400g</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <div class="slide slide1">
+                        <div class="content">
+                            <img src="./Crafers Products/Mello1.jpeg" alt="Crafers Tropical Mix">
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="content">
+                            <h3>Mello Classic Mix</h3>
+                            <p>Classic chocolate varieties including milk, dark, and white chocolate in one perfect collection.</p>
+                            <div class="weight">Weight: 220g</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SAMARQAND. All rights reserved. | Crafers products distributed by SAMARQAND</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

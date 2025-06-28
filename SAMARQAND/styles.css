@@ -33,7 +33,7 @@ nav ul {
     margin-right: 0;        /* Remove default margin */
     margin-left: 10p;      /* Push the nav list to the right */
     display: flex;
-    gap: 25px;
+    gap: 20px;
     list-style: none;
     padding: 0;
 }
@@ -42,7 +42,7 @@ nav a {
     color: #5f2525;
     font-weight: bold;
     transition: color 0.2s;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 nav a:hover {

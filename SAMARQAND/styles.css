@@ -230,10 +230,10 @@ section h2 {
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.service1 { background-color: #d28f60; color: white; }
-.service2 { background-color: #77d4e8; color: #ffffff; }
-.service3 { background-color: #c59ef0; color: white; }
-.service4 { background-color: #bfa36f; color: white; }
+.service1 { background-color: #A97142; color: white; }
+.service2 { background-color: #CD7F32; color: #ffffff; }
+.service3 { background-color: #8B4513; color: white; }
+.service4 { background-color: #D2691E; color: white; }
 
 .servicelogos{
     width: 300px;
@@ -244,29 +244,20 @@ section h2 {
 }
 
 .service1:hover {
-    background-color:lightpink; 
- 
+    background-color: #8B4513; 
     transition: background-color 1s ease;
-    
 }
 .service2:hover{
-
-    background-color:lightgreen; 
- 
+    background-color: #A97142; 
     transition: background-color 1s ease;
-   
 }
 .service3:hover{
-    background-color:rgb(131, 73, 131); 
- 
+    background-color: #CD7F32; 
     transition: background-color 1s ease;
-   
 }
 .service4:hover{
-    background-color:rgb(19, 7, 1); 
- 
+    background-color: #8B4513; 
     transition: background-color 1s ease;
-   
 }
 
 .service-card h3 {
@@ -293,24 +284,24 @@ section h2 {
     margin-bottom: 24px;
 }
 
-.service-icon video {
-    display: block;
-    margin: 0 auto;
-    width: 110px;
-    height: 110px;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    object-fit: cover;
-}
+.service-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
 
 #products {
-    background: #ECECEC;
+    background: linear-gradient(135deg, #F8F6F3 0%, #E8E0D8 50%, #D4C4B8 100%);
     border-radius: 20px;
     margin: 40px 20px;
-    box-shadow: 0 8px 32px rgba(192,192,192,0.10);
+    box-shadow: 0 8px 32px rgba(169, 113, 66, 0.12);
     position: relative;
     overflow: hidden;
-    border: 1px solid #E5E4E2;
+    border: 1px solid rgba(169, 113, 66, 0.15);
 }
 
 #products::before {
@@ -320,7 +311,7 @@ section h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(52, 73, 94, 0.9) 0%, rgba(44, 62, 80, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(169, 113, 66, 0.05) 0%, rgba(205, 127, 50, 0.08) 100%);
     z-index: 0;
     pointer-events: none;
 }
@@ -333,11 +324,9 @@ section h2 {
     overflow: hidden;
     width: 100%;
     position: relative;
-    background: #ECECEC;
+    background: transparent;
     padding: 32px 0;
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(192,192,192,0.10);
-    border: 1px solid #E5E4E2;
 }
 
 .products-grid {
@@ -356,48 +345,52 @@ section h2 {
     }
 }
 .product-card {
-    background: linear-gradient(135deg, #F5F5F5 60%, #E5E4E2 100%);
-    border-radius: 18px;
-    box-shadow: 0 2px 8px rgba(192,192,192,0.10);
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(169, 113, 66, 0.08);
     padding: 20px;
     width: 280px;
-    height: 280px;
+    height: 300px;
     text-align: center;
-    transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
-    color: #222222;
+    transition: all 0.3s ease;
+    color: #2C1810;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1.5px solid #C0C0C0;
+    border: 1px solid rgba(169, 113, 66, 0.1);
+    position: relative;
 }
+
 .product-card img {
     width: 240px;
     height: 180px;
     border-radius: 12px;
-    margin-bottom: 12px;
-    transition: filter 0.25s, transform 0.25s;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
     object-fit: cover;
     border: 2px solid #CD7F32;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     background: #fff;
 }
+
 .product-card p {
     margin: 0;
-    color: #A97142;
+    color: #8B4513;
     font-size: 1.2rem;
     font-weight: 500;
-    padding: 0 8px;
+    padding: 8px;
     font-family: 'Poppins', sans-serif;
 }
+
 .product-card:hover {
-    transform: translateY(-12px) scale(1.06);
-    box-shadow: 0 12px 32px rgba(79,138,139,0.18);
-    filter: brightness(1.08);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(169, 113, 66, 0.15);
+    border-color: rgba(205, 127, 50, 0.3);
 }
+
 .product-card:hover img {
-    filter: brightness(1.05) saturate(1.05);
-    transform: scale(1.02);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+    border-color: #8B4513;
+    box-shadow: 0 4px 16px rgba(205, 127, 50, 0.2);
 }
 
 button {
@@ -932,3 +925,12 @@ form textarea {
       transform: translateX(-50%);
     }
   }
+  .services-title {
+    color: #A97142;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 24px;
+    margin-top: 0;
+}

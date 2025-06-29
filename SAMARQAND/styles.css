@@ -227,28 +227,31 @@ section h2 {
     justify-content: flex-start;
     text-align: center;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  }
-  
-  
-  
-  .service-card h3 {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0) scale(1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.service-card h3 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 14px;
-  }
-  
-  .service-card p {
+}
+
+.service-card p {
     font-size: 1rem;
     line-height: 1.6;
     padding: 0 8px;
-  }
-  .service-icon {
+}
+
+.service-icon {
     width: 180px;
     height: 180px;
     margin-bottom: 20px;
@@ -256,37 +259,41 @@ section h2 {
     align-items: center;
     justify-content: center;
 }
+
 .service1 { background: linear-gradient(135deg, #A97142 0%, #8B4513 100%); color: white; }
 .service2 { background: linear-gradient(135deg, #CD7F32 0%, #A97142 100%); color: #ffffff; }
 .service3 { background: linear-gradient(135deg, #8B4513 0%, #654321 100%); color: white; }
 .service4 { background: linear-gradient(135deg, #D2691E 0%, #CD7F32 100%); color: white; }
 
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
-}
 
 
-
-/* Service card hover effects */
-.service1:hover {
+/* Enhanced hover effects for individual service cards */
+.service-card.service1:hover {
     background: linear-gradient(135deg, #8B4513 0%, #654321 100%);
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(169, 113, 66, 0.25);
+    z-index: 10;
 }
 
-.service2:hover {
+.service-card.service2:hover {
     background: linear-gradient(135deg, #A97142 0%, #8B4513 100%);
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(205, 127, 50, 0.25);
+    z-index: 10;
 }
 
-.service3:hover {
+.service-card.service3:hover {
     background: linear-gradient(135deg, #654321 0%, #4A2C1A 100%);
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.25);
+    z-index: 10;
 }
 
-.service4:hover {
+.service-card.service4:hover {
     background: linear-gradient(135deg, #CD7F32 0%, #A97142 100%);
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(210, 105, 30, 0.25);
+    z-index: 10;
 }
 
 #products {

@@ -12,11 +12,10 @@ body {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 0;
-    
+    padding: 0;    
 }
 header {
-    background: #C0C0C0;
+    background: beige;
     padding: 0px 0;
     box-shadow: 0 2px 8px rgba(192,192,192,0.08);
     position: fixed;
@@ -35,13 +34,13 @@ nav ul {
     margin-right: 0;        /* Remove default margin */
     margin-left: 10p;      /* Push the nav list to the right */
     display: flex;
-    gap: 20px;
+    gap: 5px;
     list-style: none;
     padding: 0;
 }
 nav a {
     text-decoration: none;
-    color: #A97142;
+    color: #644125;
     font-weight: bold;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-size: 1rem;
@@ -111,7 +110,7 @@ nav a:hover::before {
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #A97142;
+    color: beige;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(192,192,192,0.15);
@@ -442,7 +441,7 @@ form button:hover {
     font-weight: bold;
 }
 footer {
-    background: #C0C0C0;
+    background: beige;
     color: #222222;
     text-align: center;
     padding: 24px 0 18px 0;   /* More top padding for space */
@@ -559,7 +558,9 @@ header .container {
     position: relative;
     padding: 60px 0;
     z-index: 0;
-    background: linear-gradient(135deg, #ff0200 0%, #0d489d 50%, #9a7fac 100%);
+    background: linear-gradient(-45deg, #A97142, #CD7F32, #F5F5DC, #8B4513);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     margin: 40px 20px;
@@ -587,12 +588,22 @@ header .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 40px;
+    gap: 75px 200px;
     justify-items: center;
     align-items: center;
+    justify-content: center;
+    align-content: center;
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 20px;
+}
+@supports not (justify-content: center) {
+  .Partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .Partners-grid img {
@@ -606,6 +617,77 @@ header .container {
 
 .Partners-grid img:hover {
     transform: scale(1.08) translateY(-8px);
+}
+
+.partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    background: transparent;
+    border-radius: 16px;
+    box-shadow: none;
+    padding: 0;
+    height: 500px;
+    width: 350px;
+    border: none;
+}
+.partner-card .partner-details {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(245, 245, 220, 0.95);
+    z-index: 2;
+    text-align: center;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+.partner-card:hover .partner-details {
+    opacity: 1;
+    pointer-events: auto;
+}
+.partner-card img {
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+    transition: filter 0.3s;
+    position: relative;
+    max-width: 280px;
+    max-height: 180px;
+}
+.partner-card:hover img {
+    filter: none;
+}
+.partner-card .partner-details img {
+    margin-bottom: 12px;
+    max-width: 280px;
+    max-height: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.partner-card .partner-details hr {
+    width: 80%;
+    margin: 16px auto;
+    color: rgba(0, 0, 0, 0.3);
+}
+.partner-card .partner-details p {
+    margin: 0;
+    font-size: 1rem;
+    color: #644125;
+    padding: 0 8px;
 }
 
 @media (max-width: 700px) {
@@ -629,7 +711,7 @@ html {
 }
 #contact {
     background: 
-        linear-gradient(135deg, rgba(169, 113, 66, 0.95) 0%, rgba(139, 69, 19, 0.9) 50%, rgba(101, 67, 33, 0.95) 100%),
+        linear-gradient(135deg, #654321 0%, rgb(34, 29, 1) 100%),
         url('background3.jpg') center center/cover no-repeat;
     padding: 30px 0 25px 0; /* Further reduced */
     position: relative;
@@ -967,11 +1049,23 @@ form textarea {
     }
   }
   .services-title {
-    color: #A97142;
+    color: #644125;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 24px;
     margin-top: 0;
+}
+
+.partner-card:hover > img {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
 }

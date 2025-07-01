@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
 </head>
 <body>
     <header>
@@ -45,73 +43,38 @@
     <section id="about">
         <div class="container">
             <h2 class="fade-in">About Us</h2>
-            <p class="fade-in-left">SAMARQAND is a leading distributor and wholesaler of premium candies and chocolates, known for excellence in global import and export. We connect international suppliers with local retailers, offering a curated selection of top-tier confections. With a strong reputation for reliability and customer service, our global sourcing network provides access to renowned brands and artisanal treats. Whether you run a supermarket, boutique, or distribution business, SAMARQAND is your trusted partner for quality sweets, competitive pricing, and smooth logistics.</p>
+            <div class="typewriter-container">
+                <p class="typewriter-multi">SAMARQAND is a leading distributor and wholesaler of premium candies and chocolates, known for excellence in global import and export. We connect international suppliers with local retailers, offering a curated selection of top-tier confections. With a strong reputation for reliability and customer service, our global sourcing network provides access to renowned brands and artisanal treats. Whether you run a supermarket, boutique, or distribution business, SAMARQAND is your trusted partner for quality sweets, competitive pricing, and smooth logistics.</p>
+            </div>
         </div>
     </section>
-    
-    
-    <div class="container">
-        <h2 class="services-title">Our Services</h2>
-        <div class="services-cards">
-          <div class="service-card service1 fade-in-left">
-           <div class="service-icon">
-            <lottie-player 
-              src="./service gifs/wholesale.json" 
-              background="transparent" 
-              speed="1" 
-              loop 
-              autoplay 
-              style="width: 200px; height: 200px;">
-            </lottie-player></div>
-            <h3>Wholesale Distribution</h3>
-            <p>Efficient and reliable distribution of candies and chocolates to retailers and wholesalers worldwide.</p>
-          </div>
-          
-          <div class="service-card service2 fade-in-right">
-            <lottie-player 
-              src="./service gifs/import.json" 
-              background="transparent" 
-              speed="1" 
-              loop 
-              autoplay 
-              style="width: 200px; height: 200px;">
-            </lottie-player>
-            <h3>Import & Export Logistics</h3>
-            <p>Seamless import and export solutions, connecting global suppliers with local markets for premium sweets.</p>
-          </div>
-      
-          <div class="service-card service3 fade-in-left">
-            <div class="service-icon">
-            <lottie-player 
-              src="./service gifs/quality.json" 
-              background="transparent" 
-              speed="1" 
-              loop 
-              autoplay 
-              style="width: 200px; height: 200px;">
-            </lottie-player>
-          </div>
-            <h3>Quality Assurance</h3>
-            <p>Strict quality control to ensure every product meets the highest standards of taste and safety.</p>
-          </div>
-      
-          <div class="service-card service4 fade-in-right">
-
-            <lottie-player 
-              src="./service gifs/retail.json" 
-              background="transparent" 
-              speed="1" 
-              loop 
-              autoplay 
-              style="width: 200px; height: 200px;">
-            </lottie-player>
-            <h3>Retail Partnerships</h3>
-            <p>Building strong relationships with retailers to deliver tailored solutions and exclusive products.</p>
-          </div>
+    <section id="services">
+        <div class="container">
+            <h2 class="fade-in" style="color: #e3eefc;">Our Services</h2>
+            <div class="services-cards">
+                <div class="service-card service1 fade-in-left">
+                    <div class="service-icon"><img src="./service gifs/candy.gif"/></div>
+                    <h3>Wholesale Distribution</h3>
+                    <p>Efficient and reliable distribution of candies and chocolates to retailers and wholesalers worldwide.</p>
+                </div>
+                <div class="service-card service2 fade-in-right">
+                    <div class="service-icon"><img src="./service gifs/truck.gif"/></div>
+                    <h3>Import & Export Logistics</h3>
+                    <p>Seamless import and export solutions, connecting global suppliers with local markets for premium sweets.</p>
+                </div>
+                <div class="service-card service3 fade-in-left">
+                    <div class="service-icon"><img src="./service gifs/best-quality.gif"/></div>
+                    <h3>Quality Assurance</h3>
+                    <p>Strict quality control to ensure every product meets the highest standards of taste and safety.</p>
+                </div>
+                <div class="service-card service4 fade-in-right">
+                    <div class="service-icon"><img src="./service gifs/contract.gif"/></div>
+                    <h3>Retail Partnerships</h3>
+                    <p>Building strong relationships with retailers to deliver tailored solutions and exclusive products.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    
-   
+    </section>
     <section id="products">
         <div class="container">
           <h2 class="fade-in" style="color:#ffffff;">Our Products</h2>
@@ -119,7 +82,7 @@
           <div class="scrolling-wrapper">
             <div class="products-grid">
               <!-- Repeat items twice for looping effect -->
-              <div class="product-card">
+              <<div class="product-card">
                 <img src="./products/choco milk.webp" alt="Assorted Candies">
                 <p>Choco Break Chocolate Milk</p>
               </div>
@@ -202,7 +165,7 @@
                                 <div class="contact-icon">📧</div>
                                 <div class="contact-text">
                                     <span class="contact-label">Email</span>
-                                    <span class="contact-value">info@SAMARQAND.com</span>
+                                    <span class="contact-value">info@samarqand.com</span>
                                 </div>
                             </div>
                             
@@ -219,29 +182,28 @@
                             <p>Follow us for updates and sweet deals!</p>
                             <ul class="social-media-list">
                                 <li>
-                                    <a href="https://wa.me/962795911913" target="_blank">
+                                    <a href="https://wa.me/962795911913" target="_blank" rel="noopener noreferrer">
                                         <i class="fab fa-whatsapp icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/SAMARQAND" target="_blank">
+                                    <a href="https://www.facebook.com/samarqand.jordan" target="_blank" rel="noopener noreferrer">
                                         <i class="fab fa-facebook-f icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/SAMARQAND" target="_blank">
+                                    <a href="https://www.instagram.com/samarqand.jordan" target="_blank" rel="noopener noreferrer">
                                         <i class="fab fa-instagram icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:info@SAMARQAND.com">
+                                    <a href="mailto:info@samarqand.com" target="_blank" rel="noopener noreferrer">
                                         <i class="fas fa-envelope icon"></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    
                     
                     <div class="contact-form-box">
                         <div class="form-header">

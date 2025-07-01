@@ -38,17 +38,146 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Scroll-triggered fade-in animations
-    const fadeEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+    // Sticky Navigation with Scroll Effect
+    const header = document.querySelector('header');
+    const logo = document.querySelector('.site-logo');
+    
+    window.addEventListener('scroll', function() {
+        const windowTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (windowTop > 100) {
+            header.classList.add('navShadow');
+        } else {
+            header.classList.remove('navShadow');
+        }
+    });
+
+    // Click Logo to Scroll to Top
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Smooth Scrolling for Navigation Links
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const headerHeight = 70; // Use the scrolled header height for offset
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Active Navigation Link Highlighting
+    const sections = document.querySelectorAll('section[id]');
+    
+    function updateActiveNavLink() {
+        const scrollPosition = window.pageYOffset + 80; // Use the scrolled header height for offset
+        
+        // Clear all active states first
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Only highlight if we've scrolled past the hero section
+        if (scrollPosition > window.innerHeight * 0.8) {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    if (navLink) navLink.classList.add('active');
+                }
+            });
+        }
+    }
+    
+    window.addEventListener('scroll', updateActiveNavLink);
+    updateActiveNavLink(); // Initial call
+
+    // Enhanced Scroll-triggered animations
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .slide-up, .scale-in, .rotate-in, .bounce-in, .service-card, .product-card, .Partners-grid img');
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('visible');
             }
         });
-    }, { threshold: 0.15 });
-    fadeEls.forEach(el => observer.observe(el));
+    }, { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Parallax Effect for Background Elements
+    const parallaxElements = document.querySelectorAll('.parallax');
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Smooth reveal animation for sections
+    const allSections = document.querySelectorAll('section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            } else {
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(30px)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    allSections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        sectionObserver.observe(section);
+    });
+
+    // Typewriter animation trigger
+    const typewriterElement = document.querySelector('.typewriter-multi');
+    if (typewriterElement) {
+        const typewriterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Reset animation
+                    typewriterElement.style.animation = 'none';
+                    typewriterElement.offsetHeight; // Trigger reflow
+                    typewriterElement.style.animation = 'typing-multi 4s steps(80) forwards, blink 0.7s infinite';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        typewriterObserver.observe(typewriterElement);
+    }
 }); 
 
 const form = document.getElementById('form1');

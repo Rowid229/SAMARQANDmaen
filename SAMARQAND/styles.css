@@ -206,7 +206,7 @@ section h2 {
     flex-direction: row;
     justify-content: center;   /* Center the cards as a group */
     align-items: stretch;
-    gap: 24px;
+    gap: 60px;
     flex-wrap: wrap;
     margin-top: 32px;
     margin-bottom: 32px;
@@ -586,9 +586,8 @@ header .container {
 
 .Partners-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 75px 200px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
     justify-items: center;
     align-items: center;
     justify-content: center;

@@ -6,6 +6,13 @@ body {
     color: #2C1810;
 }
 
+body[dir="rtl"] {
+    direction: rtl;
+}
+body[dir="ltr"] {
+    direction: ltr;
+}
+
 .container {
     width: 100%;
     max-width: none;
@@ -143,10 +150,13 @@ nav a:hover::after {
     background: linear-gradient(135deg, #5A258B 0%, #A084CA 100%);
     color: #fff;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(90, 37, 139, 0.18);
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
 }
 
 .back-btn:hover {

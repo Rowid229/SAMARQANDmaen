@@ -7,6 +7,12 @@ body {
     line-height: 1.6;
 }
 
+body[dir="rtl"] {
+    direction: rtl;
+}
+body[dir="ltr"] {
+    direction: ltr;
+}
 
 .container {
     width: 100%;

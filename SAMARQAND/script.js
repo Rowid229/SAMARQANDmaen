@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Smooth Scrolling for Navigation Links
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const navLinks = document.querySelectorAll('nav a[href*="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const targetId = this.getAttribute('href').split('#')[1];
+            const targetSection = document.getElementById(targetId);
             
             if (targetSection) {
                 const headerHeight = 70; // Use the scrolled header height for offset
@@ -87,24 +87,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     
     function updateActiveNavLink() {
-        const scrollPosition = window.pageYOffset + 80; // Use the scrolled header height for offset
-        
-        // Clear all active states first
-        navLinks.forEach(link => link.classList.remove('active'));
-        
-        // Only highlight if we've scrolled past the hero section
-        if (scrollPosition > window.innerHeight * 0.8) {
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    if (navLink) navLink.classList.add('active');
+        const headerHeight = 70; // Adjust if your header height changes
+        const scrollPosition = window.pageYOffset + headerHeight + 1;
+
+        let currentSectionId = null;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.includes('#')) {
+                const id = href.split('#')[1];
+                if (id === currentSectionId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
-            });
-        }
+            }
+        });
     }
     
     window.addEventListener('scroll', updateActiveNavLink);

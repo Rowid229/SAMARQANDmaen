@@ -97,6 +97,7 @@ nav a:hover::after {
 }
 
 .crafers-logo {
+    margin-top: 100px;
     width: 200px;
     height: 200px;
     border-radius: 50%;

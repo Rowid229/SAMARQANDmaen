@@ -361,6 +361,7 @@ section h2 {
     padding: 20px;
     width: 280px;
     height: 300px;
+align-items: center;
     text-align: center;
     transition: all 0.3s ease;
     color: #2C1810;
@@ -646,7 +647,7 @@ header .container {
 }
 .partner-card:hover {
     box-shadow: 0 12px 32px rgba(169, 113, 66, 0.18), 0 6px 20px rgba(169, 113, 66, 0.12);
-    transform: translateY(-8px) scale(1.04);
+    transform: translateY(-8px) scale(0.9);
 }
 .partner-card .partner-details {
     opacity: 0;
@@ -657,7 +658,7 @@ header .container {
     align-items: center;
     justify-content: flex-start;
     height: 100%;
-    width: 100%;
+    width: 90%;
     position: absolute;
     top: 0;
     left: 0;
@@ -908,18 +909,18 @@ cona
   list-style: none;
 }
 #social-media-list-item li a {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-color: #fff;
   text-align: center;
-  line-height: 80px;
-  font-size: 35px;
-  margin: 0 10px;
+  line-height: 60px;
+  font-size: 28px;
+  margin: 0 8px;
   display: block;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 3px solid #fff;
+  border: 2.5px solid #fff;
   z-index: 1;
   transition: box-shadow 0.3s;
 }

@@ -9,24 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="#top">
-                <img src="logo.png" alt="SAMARQAND Logo" class="site-logo" style="height: 50px; margin-top:10px; margin-bottom:10px;">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#products">Our Products</a></li>
-                    <li><a href="#Key-Partners">Key Partners</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+        <a href="index.html">
+            <img src="logo.png" alt="SAMARQAND Logo" class="site-logo" style="height: 50px; margin-top:10px; margin-bottom:10px;">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Our Services</a></li>
+                <li><a href="index.html#products">Our Products</a></li>
+                <li><a href="index.html#Key-Partners">Key Partners</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
    
     <section class="hero">
         <video class="bg-video" autoplay loop muted playsinline>
@@ -42,42 +44,77 @@
     </section>
     <section id="about">
         <div class="container">
-            <h2 class="fade-in">About Us</h2>
-            <div class="typewriter-container">
-                <p class="typewriter-multi">SAMARQAND is a leading distributor and wholesaler of premium candies and chocolates, known for excellence in global import and export. We connect international suppliers with local retailers, offering a curated selection of top-tier confections. With a strong reputation for reliability and customer service, our global sourcing network provides access to renowned brands and artisanal treats. Whether you run a supermarket, boutique, or distribution business, SAMARQAND is your trusted partner for quality sweets, competitive pricing, and smooth logistics.</p>
-            </div>
+            <h2 class="fade-in" style="color: #644125">About Us</h2>
+            <p class="fade-in-left">SAMARQAND is a leading distributor and wholesaler of premium candies and chocolates, known for excellence in global import and export. We connect international suppliers with local retailers, offering a curated selection of top-tier confections. With a strong reputation for reliability and customer service, our global sourcing network provides access to renowned brands and artisanal treats. Whether you run a supermarket, boutique, or distribution business, SAMARQAND is your trusted partner for quality sweets, competitive pricing, and smooth logistics.</p>
         </div>
     </section>
+    
     <section id="services">
-        <div class="container">
-            <h2 class="fade-in" style="color: #e3eefc;">Our Services</h2>
-            <div class="services-cards">
-                <div class="service-card service1 fade-in-left">
-                    <div class="service-icon"><img src="./service gifs/candy.gif"/></div>
-                    <h3>Wholesale Distribution</h3>
-                    <p>Efficient and reliable distribution of candies and chocolates to retailers and wholesalers worldwide.</p>
-                </div>
-                <div class="service-card service2 fade-in-right">
-                    <div class="service-icon"><img src="./service gifs/truck.gif"/></div>
-                    <h3>Import & Export Logistics</h3>
-                    <p>Seamless import and export solutions, connecting global suppliers with local markets for premium sweets.</p>
-                </div>
-                <div class="service-card service3 fade-in-left">
-                    <div class="service-icon"><img src="./service gifs/best-quality.gif"/></div>
-                    <h3>Quality Assurance</h3>
-                    <p>Strict quality control to ensure every product meets the highest standards of taste and safety.</p>
-                </div>
-                <div class="service-card service4 fade-in-right">
-                    <div class="service-icon"><img src="./service gifs/contract.gif"/></div>
-                    <h3>Retail Partnerships</h3>
-                    <p>Building strong relationships with retailers to deliver tailored solutions and exclusive products.</p>
-                </div>
-            </div>
+    <div class="container">
+        <h2 class="services-title">Our Services</h2>
+        <div class="services-cards">
+          <div class="service-card service1 fade-in-left">
+           <div class="service-icon">
+            <lottie-player 
+              src="./service gifs/wholesale.json" 
+              background="transparent" 
+              speed="1" 
+              loop 
+              autoplay 
+              style="width: 200px; height: 200px;">
+            </lottie-player></div>
+            <h3>Wholesale Distribution</h3>
+            <p>Efficient and reliable distribution of candies and chocolates to retailers and wholesalers worldwide.</p>
+          </div>
+          
+          <div class="service-card service2 fade-in-right">
+            <lottie-player 
+              src="./service gifs/import.json" 
+              background="transparent" 
+              speed="1" 
+              loop 
+              autoplay 
+              style="width: 200px; height: 200px;">
+            </lottie-player>
+            <h3>Import & Export Logistics</h3>
+            <p>Seamless import and export solutions, connecting global suppliers with local markets for premium sweets.</p>
+          </div>
+      
+          <div class="service-card service3 fade-in-left">
+            <div class="service-icon">
+            <lottie-player 
+              src="./service gifs/quality.json" 
+              background="transparent" 
+              speed="1" 
+              loop 
+              autoplay 
+              style="width: 200px; height: 200px;">
+            </lottie-player>
+          </div>
+            <h3>Quality Assurance</h3>
+            <p>Strict quality control to ensure every product meets the highest standards of taste and safety.</p>
+          </div>
+      
+          <div class="service-card service4 fade-in-right">
+
+            <lottie-player 
+              src="./service gifs/retail.json" 
+              background="transparent" 
+              speed="1" 
+              loop 
+              autoplay 
+              style="width: 200px; height: 200px;">
+            </lottie-player>
+            <h3>Retail Partnerships</h3>
+            <p>Building strong relationships with retailers to deliver tailored solutions and exclusive products.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    
+   </section>
     <section id="products">
         <div class="container">
-          <h2 class="fade-in" style="color:#ffffff;">Our Products</h2>
+          <h2 class="fade-in" style="color:#644125">Our Products</h2>
       
           <div class="scrolling-wrapper">
             <div class="products-grid">
@@ -129,12 +166,40 @@
 
     <section id="Key-Partners">
         <div class="container">
-            <h2 class="fade-in" style="color: #e3eefc;">Key Partners</h2>
+            <h2 class="fade-in" style="color: rgb(255, 255, 228);">Key Partners</h2>
             <div class="Partners-grid">
-                <a href="crafers.html"><img src="./Partners/crafersuz_logo.jpg"></a>
-                <a href="https://krember.uz/"><img src="./Partners/Krember.jpg"></a>
-                <a href="https://kontirus.ru/en/"><img src="./Partners/Konti.png"></a>
-                <a href="https://shirinasal.com/home"><img src="./Partners/shirin asal.png"></a>    
+              <div class="partner-card fade-in">
+                <img src="./Partners/crafersuz_logo.jpg">
+                <div class="partner-details">
+                  <a href="crafers.html" target="_blank"><img src="./Partners/crafersuz_logo.jpg"></a>
+                  <hr>
+                  <p>Crafers is a leading Uzbek manufacturer known for producing a wide range of high-quality snacks, confectionery, and other delicious food products. The company is recognized for its commitment to quality, innovation, and taste, making it a popular choice both in Uzbekistan and in international markets.</p>
+                </div>
+              </div>
+              <div class="partner-card fade-in">
+                <img src="./Partners/Krember.jpg">
+                <div class="partner-details">
+                  <a href="https://krember.uz/" target="_blank"><img src="./Partners/Krember.jpg"></a>
+                  <hr>
+                  <p>Krember is a confectionery brand produced by Almerro Group LLC, based in Tashkent, Uzbekistan. They create a diverse range of sweet treats including cookies, wafers, cakes, chocolates, and chocolate pastes.</p>
+                </div>
+              </div>
+              <div class="partner-card fade-in">
+                <img src="./Partners/Konti.png">
+                <div class="partner-details">
+                  <a href="https://kontirus.ru/en/" target="_blank"><img src="./Partners/Konti.png"></a>
+                  <hr>
+                  <p>Konti Group, founded in 1997 and based in Kostiantynivka, Donetsk Oblast, is one of Ukraine's largest confectionery producers. It offers around 200 products like cookies, candies, wafers, and cakes. Certified with ISO 9001 and ISO 22000, the company exports to over 20 countries, including Germany, Greece, Iraq, and Uzbekistan.</p>
+                </div>
+              </div>
+              <div class="partner-card fade-in">
+                <img src="./Partners/shirin asal.png">
+                <div class="partner-details">
+                  <a href="https://shirinasal.com/home" target="_blank"><img src="./Partners/shirin asal.png"></a>
+                  <hr>
+                  <p>Shirin Asal is a powerhouse in confectionery, rooted in Iran and expanded internationally. They offer a massive range of sweet and snack products, backed by high-quality manufacturing and global certifications. Their international presence includes UAE trading operations and a local production base in Uzbekistan.</p>
+                </div>
+              </div>    
             </div>
         </div>
     </section>
@@ -148,7 +213,15 @@
                 <div class="contact-container">
                     <div class="contact-info">
                         <div class="contact-header">
-                            <video class="contact-logo-video" src="contact logo.webm" autoplay loop muted playsinline></video>
+                          <div class="contact-logo">
+                          <lottie-player 
+                          src="contact.json" 
+                          background="transparent" 
+                          speed="1" 
+                          loop 
+                          autoplay 
+                          style="width: 200px; height: 200px;">
+                        </lottie-player></div>
                             <h3>Contact Information</h3>
                         </div>
                         
@@ -182,28 +255,29 @@
                             <p>Follow us for updates and sweet deals!</p>
                             <ul class="social-media-list">
                                 <li>
-                                    <a href="https://wa.me/962795911913" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://wa.me/962795911913" target="_blank">
                                         <i class="fab fa-whatsapp icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/samarqand.jordan" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://www.facebook.com/SAMARQAND" target="_blank">
                                         <i class="fab fa-facebook-f icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/samarqand.jordan" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://www.instagram.com/SAMARQAND" target="_blank">
                                         <i class="fab fa-instagram icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:info@samarqand.com" target="_blank" rel="noopener noreferrer">
+                                    <a href="mailto:info@SAMARQAND.com">
                                         <i class="fas fa-envelope icon"></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    
                     
                     <div class="contact-form-box">
                         <div class="form-header">

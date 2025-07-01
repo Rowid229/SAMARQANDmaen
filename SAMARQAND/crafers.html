@@ -23,56 +23,64 @@
             padding: 0 20px;
         }
         
-        header {
-            background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
-            box-shadow: 0 4px 20px rgba(44, 24, 16, 0.15);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-        
         nav a {
-            text-decoration: none;
-            color: #2C1810;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: #D4AF37;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(to right, #D4AF37, #CD853F);
-            transition: width 0.3s ease;
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
+    text-decoration: none;
+    color: #644125;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(205,127,50,0.08);
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+header {
+    background: beige;
+    padding: 0px 0;
+    box-shadow: 0 2px 8px rgba(192,192,192,0.08);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+nav a:hover {
+    color: #D4AF37;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(to right, #D4AF37, #CD853F);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
         
         .crafers-hero {
             background: linear-gradient(135deg, #F5F5DC 0%, #E6E6FA 50%, #F0E68C 100%);
@@ -353,6 +361,7 @@
         }
         
         @media (max-width: 768px) {
+            
             .crafers-title {
                 font-size: 2rem;
             }
@@ -366,6 +375,71 @@
             .product-item {
                 padding: 20px;
             }
+        }
+
+        /* Responsive nav for mobile */
+        @media (max-width: 900px) {
+          header .container {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 8px;
+          }
+          nav ul {
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            align-items: flex-start;
+            margin-top: 10px;
+          }
+          nav {
+            width: 100%;
+          }
+        }
+        @media (max-width: 700px) {
+          .crafers-hero {
+            padding: 120px 0 40px;
+          }
+          .crafers-logo {
+            width: 120px;
+            height: 120px;
+          }
+          .crafers-title {
+            font-size: 1.5rem;
+          }
+          .crafers-subtitle {
+            font-size: 1rem;
+            margin-bottom: 20px;
+          }
+          .back-btn {
+            padding: 8px 18px;
+            font-size: 0.95rem;
+          }
+          .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+          }
+        }
+        @media (max-width: 600px) {
+          .container {
+            padding: 0 6px;
+          }
+          .products-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 0 2px;
+          }
+          .product-item {
+            height: auto;
+            min-height: 320px;
+            padding: 8px 0;
+          }
+          .product-item img {
+            max-width: 100px;
+            height: 80px;
+          }
+          .slide.slide2 {
+            padding: 8px;
+          }
         }
     </style>
 </head>

@@ -102,6 +102,16 @@ nav a.active {
 nav a.active::before {
     width: 80%;
 }
+
+nav a.active {
+    color: #CD7F32;
+    background: rgba(205,127,50,0.15);
+    backdrop-filter: blur(5px);
+}
+
+nav a.active::before {
+    width: 80%;
+}
 .bg-video {
     position: absolute;
     top: 0; left: 0;

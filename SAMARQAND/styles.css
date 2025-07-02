@@ -1235,3 +1235,24 @@ form textarea {
     font-size: 1.1rem;
   }
 }
+
+.rtl-phone {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  display: block;
+}
+
+.rtl-follow {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  display: block;
+}
+
+.rtl-label {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  display: block;
+}

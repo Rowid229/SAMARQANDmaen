@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامارقند - توزيع الحلويات والشوكولاتة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html">
+        <img src="logo.png" alt="شعار سامارقند" class="site-logo" style="height:50px; margin-top:10px; margin-bottom:10px;">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html#about" id="nav-about">عنّا</a></li>
+          <li><a href="index.html#services" id="nav-services">خدماتنا</a></li>
+          <li><a href="index.html#products" id="nav-products">منتجاتنا</a></li>
+          <li><a href="index.html#Key-Partners" id="nav-partners">شركاؤنا الرئيسيون</a></li>
+          <li><a href="index.html#contact" id="nav-contact">تواصل معنا</a></li>
+        </ul>
+      </nav>
+      <button id="lang-toggle" class="back-btn" style="margin-right:20px;" onclick="window.location.href='index.html'">English</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <video class="bg-video" autoplay loop muted playsinline>
+      <source src="vid1.mp4" type="video/mp4">
+      متصفحك لا يدعم وسم الفيديو.
+    </video>
+    <div class="container">
+      <img src="logo.png" alt="شعار سامارقند" class="hero-logo" style="height:100px;">
+      <h2 id="main-title">SAMARQAND</h2>
+      <p id="main-desc">شريكك الموثوق في توزيع الحلويات والشوكولاتة، والجملة، والاستيراد، والتصدير.</p>
+      <a href="#contact" class="cta-btn" id="cta-btn">تواصل معنا</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-background">
+        <h2 class="fade-in" style="color:#644125" id="about-title">من نحن</h2>
+        <p class="fade-in-left" id="about-desc">
+          سامارقند هي شركة رائدة في توزيع وتجارة الجملة للحلويات والشوكولاتة، معروفة بتميزها في الاستيراد والتصدير عالمياً. نحن نربط بين الموردين الدوليين وتجار التجزئة المحليين، مقدمين مجموعة مختارة من أشهى الحلويات. بفضل سمعتنا القوية في الاعتمادية وخدمة العملاء، توفر شبكتنا العالمية مصادر للعلامات التجارية الشهيرة والمعالجات الحرفية. سواء كنت تدير سوبر ماركت، أو بوتيك، أو شركة توزيع، فإن سامارقند هي شريكك الموثوق للحصول على حلويات عالية الجودة، وأسعار تنافسية، وخدمات لوجستية سلسة.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="services-title" id="services-title">خدماتنا</h2>
+      <div class="services-cards">
+        <div class="service-card service1 fade-in-left">
+          <div class="service-icon">
+            <lottie-player src="./service gifs/wholesale.json" background="transparent" speed="1" loop autoplay style="width:200px; height:200px;"></lottie-player>
+          </div>
+          <h3 id="service1-title">توزيع الجملة</h3>
+          <p id="service1-desc">توزيع فعال وموثوق به للحلويات والشوكولاتة إلى تجار التجزئة وتجار الجملة حول العالم.</p>
+        </div>
+        <div class="service-card service2 fade-in-right">
+          <lottie-player src="./service gifs/import.json" background="transparent" speed="1" loop autoplay style="width:200px; height:200px;"></lottie-player>
+          <h3 id="service2-title">خدمات الاستيراد والتصدير</h3>
+          <p id="service2-desc">حلول سلسة للاستيراد والتصدير، تربط بين الموردين العالميين والأسواق المحلية للمنتجات الفاخرة.</p>
+        </div>
+        <div class="service-card service3 fade-in-left">
+          <div class="service-icon">
+            <lottie-player src="./service gifs/quality.json" background="transparent" speed="1" loop autoplay style="width:200px; height:200px;"></lottie-player>
+          </div>
+          <h3 id="service3-title">ضمان الجودة</h3>
+          <p id="service3-desc">رقابة صارمة على الجودة لضمان أن كل منتج يلبي أعلى معايير الطعم والسلامة.</p>
+        </div>
+        <div class="service-card service4 fade-in-right">
+          <lottie-player src="./service gifs/retail.json" background="transparent" speed="1" loop autoplay style="width:200px; height:200px;"></lottie-player>
+          <h3 id="service4-title">شراكات التجزئة</h3>
+          <p id="service4-desc">بناء علاقات قوية مع تجار التجزئة لتقديم حلول مخصصة ومنتجات حصرية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <h2 class="fade-in" style="color:#644125" id="products-title">منتجاتنا</h2>
+      <div class="scrolling-wrapper">
+        <div class="products-grid">
+          <div class="product-card">
+            <img src="./products/choco milk.webp" alt="شوكو بريك شوكولاتة بالحليب">
+            <p id="product1">شوكو بريك شوكولاتة بالحليب</p>
+          </div>
+          <div class="product-card">
+            <img src="./products/cacao.webp" alt="شوكو بريك شوكولاتة بالكاكاو">
+            <p id="product2">شوكو بريك شوكولاتة بالكاكاو</p>
+          </div>
+          <div class="product-card">
+            <img src="./products/coconut.webp" alt="شوكو بريك شوكولاتة بجوز الهند">
+            <p id="product3">شوكو بريك شوكولاتة بجوز الهند</p>
+          </div>
+          <div class="product-card">
+            <img src="./products/crafers 1.png" alt="شوكو بريك شوكولاتة بالحليب">
+            <p id="product4">شوكو بريك شوكولاتة بالحليب</p>
+          </div>
+          <div class="product-card">
+            <img src="./products/crafers 2.jpg" alt="شوكو بريك شوكولاتة بالكاكاو">
+            <p id="product5">شوكو بريك شوكولاتة بالكاكاو</p>
+          </div>
+          <div class="product-card">
+            <img src="./products/cake up.jpg" alt="شوكو بريك شوكولاتة بالكاكاو">
+            <p id="product6">شوكو بريك شوكولاتة بالكاكاو</p>
+          </div>
+          <!-- Duplicate to loop -->
+          <div class="product-card">
+            <img src="./products/cake up.jpg" alt="شوكو بريك شوكولاتة بالحليب">
+            <p id="product7">شوكو بريك شوكولاتة بالحليب</p>
+          </div>
+          <div class="product-card">
+            <img src="./products/crafers 2.jpg" alt="شوكو بريك شوكولاتة بالكاكاو">
+            <p id="product8">شوكو بريك شوكولاتة بالكاكاو</p>
+          </div>
+          <div class="product-card">
+            <img src="./products/crafers 2.jpg" alt="شوكو بريك شوكولاتة بجوز الهند">
+            <p id="product9">شوكو بريك شوكولاتة بجوز الهند</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Key-Partners">
+    <div class="container">
+      <h2 class="fade-in" style="color:rgb(255,255,228)" id="partners-title">شركاؤنا الرئيسيون</h2>
+      <div class="Partners-grid">
+        <div class="partner-card fade-in">
+          <img src="./Partners/crafersuz_logo.jpg">
+          <div class="partner-details">
+            <a href="crafers-ar.html" target="_blank"><img src="./Partners/crafersuz_logo.jpg"></a>
+            <hr>
+            <p id="partner1-desc">
+              كرافرز هي شركة تصنيع أوزبكية رائدة معروفة بإنتاج مجموعة واسعة من الوجبات الخفيفة، والحلويات، وغيرها من المنتجات الغذائية اللذيذة. تتميز الشركة بالتزامها بالجودة والابتكار والنكهة، مما يجعلها خياراً مفضلاً سواء في أوزبكستان أو في الأسواق الدولية.
+            </p>
+          </div>
+        </div>
+        <div class="partner-card fade-in">
+          <img src="./Partners/Krember.jpg">
+          <div class="partner-details">
+            <a href="https://krember.uz/" target="_blank"><img src="./Partners/Krember.jpg"></a>
+            <hr>
+            <p id="partner2-desc">
+              كريمبر هي علامة حلويات تنتجها شركة الميرو جروب ذ.م.م، ومقرها طشقند، أوزبكستان. تقدم مجموعة متنوعة من الحلويات بما في ذلك البسكويت، والوافل، والكعك، والشوكولاتة، ومعاجين الشوكولاتة.
+            </p>
+          </div>
+        </div>
+        <div class="partner-card fade-in">
+          <img src="./Partners/Konti.png">
+          <div class="partner-details">
+            <a href="https://kontirus.ru/en/" target="_blank"><img src="./Partners/Konti.png"></a>
+            <hr>
+            <p id="partner3-desc">
+              مجموعة كونتي، التي تأسست عام 1997 ومقرها كوستيانتينيفكا في منطقة دونيتسك، هي واحدة من أكبر منتجي الحلويات في أوكرانيا. تقدم حوالي 200 منتج مثل البسكويت، والحلويات، والوافل، والكعك. حاصلة على شهادات ISO 9001 وISO 22000، وتصدر منتجاتها إلى أكثر من 20 دولة، بما في ذلك ألمانيا واليونان والعراق وأوزبكستان.
+            </p>
+          </div>
+        </div>
+        <div class="partner-card fade-in">
+          <img src="./Partners/shirin asal.png">
+          <div class="partner-details">
+            <a href="https://shirinasal.com/home" target="_blank"><img src="./Partners/shirin asal.png"></a>
+            <hr>
+            <p id="partner4-desc">
+              شيرين أصال هي قوة رئيسية في صناعة الحلويات، جذورها في إيران وتوسعت دولياً. تقدم مجموعة ضخمة من المنتجات الحلوة والوجبات الخفيفة، مدعومة بتصنيع عالي الجودة وشهادات عالمية. يشمل وجودها الدولي عمليات تجارية في الإمارات وقاعدة إنتاج محلية في أوزبكستان.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-bg">
+      <div class="container">
+        <h2 class="contact-title fade-in" id="contact-title">تواصل معنا</h2>
+        <p class="contact-subtitle fade-in" id="contact-desc">هل أنت مستعد لبدء رحلة عملك الحلو؟ هيا نتواصل!</p>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-header">
+              <div class="contact-logo">
+                <lottie-player src="contact.json" background="transparent" speed="1" loop autoplay style="width:200px; height:200px;"></lottie-player>
+              </div>
+              <h3 id="contact-info-title">معلومات الاتصال</h3>
+            </div>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-text">
+                  <span class="contact-label" id="address-label">العنوان</span>
+                  <span class="contact-value" id="address-value">وادي الرمم، عمان، الأردن</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-text">
+                  <span class="contact-label" id="email-label">البريد الإلكتروني</span>
+                  <span class="contact-value" id="email-value">info@SAMARQAND.com</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-text">
+                  <span class="contact-label" id="phone-label">الهاتف</span>
+                  <span class="contact-value" id="phone-value">+962 79 591 1913</span>+9
+                </div>
+              </div>
+            </div>
+            <hr>
+            <p id="follow-us">تابعنا للحصول على التحديثات والعروض الحلوة!</p>
+            <ul id="social-media-list-item">
+              <li><a href="https://wa.me/962795911913" target="_blank"><i class="fab fa-whatsapp icon"></i></a></li>
+              <li><a href="https://www.facebook.com/SAMARQAND" target="_blank"><i class="fab fa-facebook-f icon"></i></a></li>
+              <li><a href="https://www.instagram.com/SAMARQAND" target="_blank"><i class="fab fa-instagram icon"></i></a></li>
+              <li><a href="mailto:info@SAMARQAND.com"><i class="fas fa-envelope icon"></i></a></li>
+            </ul>
+          </div>
+          <div class="contact-form-box">
+            <div class="form-header">
+              <h3 id="form-title">أرسل لنا رسالة</h3>
+              <p id="form-desc">يسعدنا سماعكم! املأ النموذج أدناه وسنعاود الاتصال بك قريباً.</p>
+            </div>
+            <form id="form1" action="https://formspree.io/f/mblypary" method="POST">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="اسمك" required id="input-name">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="بريدك الإلكتروني" required id="input-email">
+              </div>
+              <div class="form-group">
+                <input type="text" name="subject" placeholder="الموضوع (اختياري)" id="input-subject">
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="رسالتك" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn" id="submit-btn">
+                <span id="submit-btn-text">إرسال</span>
+                <span class="btn-icon">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p id="footer-text">© 2025 سامارقند. كل الحقوق محفوظة.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

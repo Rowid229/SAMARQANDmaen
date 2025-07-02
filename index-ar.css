@@ -1241,3 +1241,16 @@ form textarea {
     font-size: 1.1rem;
   }
 }
+
+#about-title, #contact-title {
+    color: beige !important;
+}
+
+.rtl-phone, .rtl-follow, .rtl-label {
+    /* Remove RTL direction for products section */
+}
+
+#products, #products *, .products-grid, .products-grid *, .product-card, .product-card * {
+    direction: ltr !important;
+    text-align: center !important;
+}

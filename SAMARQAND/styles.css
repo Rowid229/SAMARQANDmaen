@@ -155,7 +155,7 @@ nav a.active {
     background: #F5F5F5;
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    margin: 40px 20px;
+  margin-top: 20px;
     box-shadow: 0 8px 32px rgba(192,192,192,0.10);
     border: 1px solid #E5E4E2;
 }
@@ -1238,4 +1238,25 @@ form textarea {
 
 #about-title, #contact-title {
     color: beige !important;
+}
+
+.rtl-phone {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  display: block;
+}
+
+.rtl-follow {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  display: block;
+}
+
+.rtl-label {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+  display: block;
 }

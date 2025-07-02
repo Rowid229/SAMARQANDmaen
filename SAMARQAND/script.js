@@ -183,6 +183,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
         typewriterObserver.observe(typewriterElement);
     }
+
+    // Counter animation for About Us section (all at once)
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                obj.innerHTML = end + '+';
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    const aboutSection = document.getElementById('about');
+    const productCounter = document.getElementById('product-counter');
+    const yearsCounter = document.getElementById('years-counter');
+    const employeesCounter = document.getElementById('employees-counter');
+    const countriesCounter = document.getElementById('countries-counter');
+    let aboutCountersAnimated = false;
+    if (aboutSection && productCounter && yearsCounter && employeesCounter && countriesCounter) {
+        const aboutCounterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !aboutCountersAnimated) {
+                    animateValue(productCounter, 0, 500, 2000);
+                    animateValue(countriesCounter, 0, 40, 1500);
+                    animateValue(yearsCounter, 0, 20, 1500);
+                    animateValue(employeesCounter, 0, 200, 2000);
+                    aboutCountersAnimated = true;
+                    observer.unobserve(aboutSection);
+                }
+            });
+        }, { threshold: 0.4 });
+        aboutCounterObserver.observe(aboutSection);
+    }
+
+    // Counter animation for Products section
+    const productsSection = document.getElementById('products');
+    let productsCountersAnimated = false;
+    if (productsSection) {
+        const productsCounterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !productsCountersAnimated) {
+                    productsCountersAnimated = true;
+                    observer.unobserve(productsSection);
+                }
+            });
+        }, { threshold: 0.4 });
+        productsCounterObserver.observe(productsSection);
+    }
 }); 
 
 const form = document.getElementById('form1');

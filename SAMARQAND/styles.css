@@ -1240,23 +1240,11 @@ form textarea {
     color: beige !important;
 }
 
-.rtl-phone {
-  direction: rtl;
-  text-align: right;
-  unicode-bidi: embed;
-  display: block;
+.rtl-phone, .rtl-follow, .rtl-label {
+    /* Remove RTL direction for products section */
 }
 
-.rtl-follow {
-  direction: rtl;
-  text-align: right;
-  unicode-bidi: embed;
-  display: block;
-}
-
-.rtl-label {
-  direction: rtl;
-  text-align: right;
-  unicode-bidi: embed;
-  display: block;
+#products, #products *, .products-grid, .products-grid *, .product-card, .product-card * {
+    direction: ltr !important;
+    text-align: center !important;
 }

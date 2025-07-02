@@ -91,13 +91,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollPosition = window.pageYOffset + headerHeight + 1;
 
         let currentSectionId = null;
-        sections.forEach(section => {
+        for (let i = 0; i < sections.length; i++) {
+            const section = sections[i];
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            // If we're at least 60% through the previous section, highlight the next
+            if (i < sections.length - 1) {
+                const nextSection = sections[i + 1];
+                const nextSectionTop = nextSection.offsetTop;
+                if (scrollPosition >= sectionTop + sectionHeight * 0.6 && scrollPosition < nextSectionTop + sectionHeight * 0.6) {
+                    currentSectionId = nextSection.getAttribute('id');
+                }
+            }
+            // Otherwise, highlight the current section as fallback
+            if (!currentSectionId && scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 currentSectionId = section.getAttribute('id');
             }
-        });
+        }
 
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
@@ -184,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         typewriterObserver.observe(typewriterElement);
     }
 
-    // Counter animation for About Us section (all at once)
+    // Counter animation for About Us section (all at once, Arabic page)
     function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
         const step = (timestamp) => {
@@ -202,11 +212,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const aboutSection = document.getElementById('about');
     const productCounter = document.getElementById('product-counter');
+    const countriesCounter = document.getElementById('countries-counter');
     const yearsCounter = document.getElementById('years-counter');
     const employeesCounter = document.getElementById('employees-counter');
-    const countriesCounter = document.getElementById('countries-counter');
     let aboutCountersAnimated = false;
-    if (aboutSection && productCounter && yearsCounter && employeesCounter && countriesCounter) {
+    if (aboutSection && productCounter && countriesCounter && yearsCounter && employeesCounter) {
         const aboutCounterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !aboutCountersAnimated) {

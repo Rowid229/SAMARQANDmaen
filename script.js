@@ -1,4 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
+    
+    if (hamburger && navMenu && navOverlay) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+        
+        navOverlay.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+        
+        // Close menu when clicking on nav links
+        const navLinks = document.querySelectorAll('#nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        });
+    }
+    
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
     if (form) {

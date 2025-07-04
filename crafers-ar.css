@@ -1627,16 +1627,20 @@ nav a:hover::after {
 }
 
 @media (max-width: 768px) {
-    .crafers-title {
-        font-size: 2rem;
-    }
     .products-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 15px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
-    .product-item {
-        padding: 20px;
+    .product-item, .product-card {
+        width: 90vw !important;
+        max-width: 400px !important;
+        min-width: 0 !important;
+        margin: 16px auto !important;
+        float: none !important;
     }
 }
 

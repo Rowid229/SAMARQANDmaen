@@ -411,6 +411,22 @@ nav a:hover::after {
         margin: 0 !important;
         z-index: 10;
     }
+    
+    #lang-toggle {
+        position: absolute;
+        right: 10px;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        z-index: 20;
+        display: block !important;
+    }
+    
+    #lang-toggle:hover{
+        background: linear-gradient(90deg, #a05a13 0%, #c9a13b 100%);
+        transform: translateY(-50%);
+    }
 }
 
 /* Responsive nav for mobile */
@@ -431,6 +447,65 @@ nav a:hover::after {
         width: 100%;
         align-items: flex-start;
         margin-top: 10px;
+    }
+    
+    nav a {
+        display: block;
+        padding: 15px 0;
+        text-align: left;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        color: #644125;
+        text-decoration: none;
+        position: relative;
+    }
+    
+    nav a:hover {
+        color: #D4AF37;
+        background: linear-gradient(90deg, rgba(212, 175, 55, 0.1) 0%, rgba(205, 133, 63, 0.1) 100%);
+        padding-left: 20px;
+        transform: translateX(5px);
+    }
+    
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 10px;
+        left: 0;
+        background: linear-gradient(to right, #D4AF37, #CD853F);
+        transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+        width: 100%;
+    }
+    
+    /* Individual menu item hover effects */
+    #nav-about:hover {
+        background: linear-gradient(90deg, rgba(169, 113, 66, 0.15) 0%, rgba(205, 127, 50, 0.15) 100%);
+        border-left: 4px solid #A97142;
+    }
+    
+    #nav-services:hover {
+        background: linear-gradient(90deg, rgba(205, 127, 50, 0.15) 0%, rgba(169, 113, 66, 0.15) 100%);
+        border-left: 4px solid #CD7F32;
+    }
+    
+    #nav-products:hover {
+        background: linear-gradient(90deg, rgba(139, 69, 19, 0.15) 0%, rgba(101, 67, 33, 0.15) 100%);
+        border-left: 4px solid #8B4513;
+    }
+    
+    #nav-partners:hover {
+        background: linear-gradient(90deg, rgba(210, 105, 30, 0.15) 0%, rgba(205, 127, 50, 0.15) 100%);
+        border-left: 4px solid #D2691E;
+    }
+    
+    #nav-contact:hover {
+        background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(205, 133, 63, 0.15) 100%);
+        border-left: 4px solid #D4AF37;
     }
 }
 

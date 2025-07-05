@@ -81,6 +81,11 @@ nav a.active {
     transition: background 0.3s, color 0.3s;
 }
 
+#lang-toggle:hover{
+    background: linear-gradient(90deg, #a05a13 0%, #c9a13b 100%);
+    transform: translateY(-3px);
+}
+
 .bg-video {
     position: absolute;
     top: 0; left: 0;
@@ -1277,6 +1282,51 @@ form textarea {
     cursor: pointer;
     padding: 5px;
     z-index: 1000;
+    position: relative;
+}
+
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: beige;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 1001;
+}
+
+.hamburger.active .hamburger-menu {
+    display: block;
+}
+
+.hamburger-menu .nav-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    color: #644125;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(100, 65, 37, 0.1);
+    background: none;
+    border: none;
+    text-align: right;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.hamburger-menu .nav-btn:last-child {
+    border-bottom: none;
+}
+
+.hamburger-menu .nav-btn:hover {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.1) 0%, rgba(205, 133, 63, 0.1) 100%);
+    color: #D4AF37;
+    padding-right: 25px;
 }
 
 .hamburger span {
@@ -1343,6 +1393,11 @@ form textarea {
         z-index: 20;
         display: block !important;
     }
+    
+    #lang-toggle:hover{
+        background: linear-gradient(90deg, #a05a13 0%, #c9a13b 100%);
+        transform: translateY(-50%);
+    }
     /* Remove order for mobile */
     header .container > a,
     #lang-toggle,
@@ -1350,20 +1405,7 @@ form textarea {
         order: unset !important;
     }
     nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 250px;
-        height: 100vh;
-        background: beige;
-        transition: 0.3s;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-        z-index: 999;
-        padding-top: 80px;
-    }
-    
-    nav.active {
-        right: 0;
+        display: none !important;
     }
     
     nav ul {
@@ -1386,6 +1428,58 @@ form textarea {
         padding: 15px 0;
         text-align: right;
         font-size: 1.1rem;
+        transition: all 0.3s ease;
+        color: #644125;
+        text-decoration: none;
+        position: relative;
+    }
+    
+    nav a:hover {
+        color: #D4AF37;
+        background: linear-gradient(90deg, rgba(212, 175, 55, 0.1) 0%, rgba(205, 133, 63, 0.1) 100%);
+        padding-right: 20px;
+        transform: translateX(-5px);
+    }
+    
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 10px;
+        right: 0;
+        background: linear-gradient(to left, #D4AF37, #CD853F);
+        transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+        width: 100%;
+    }
+    
+    /* Individual menu item hover effects */
+    #nav-about:hover {
+        background: linear-gradient(90deg, rgba(169, 113, 66, 0.15) 0%, rgba(205, 127, 50, 0.15) 100%);
+        border-right: 4px solid #A97142;
+    }
+    
+    #nav-services:hover {
+        background: linear-gradient(90deg, rgba(205, 127, 50, 0.15) 0%, rgba(169, 113, 66, 0.15) 100%);
+        border-right: 4px solid #CD7F32;
+    }
+    
+    #nav-products:hover {
+        background: linear-gradient(90deg, rgba(139, 69, 19, 0.15) 0%, rgba(101, 67, 33, 0.15) 100%);
+        border-right: 4px solid #8B4513;
+    }
+    
+    #nav-partners:hover {
+        background: linear-gradient(90deg, rgba(210, 105, 30, 0.15) 0%, rgba(205, 127, 50, 0.15) 100%);
+        border-right: 4px solid #D2691E;
+    }
+    
+    #nav-contact:hover {
+        background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(205, 133, 63, 0.15) 100%);
+        border-right: 4px solid #D4AF37;
     }
     
     /* Overlay when menu is open */

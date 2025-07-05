@@ -20,31 +20,60 @@ function scrollToSection(sectionId) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Debug: Check if navigation elements exist
-    console.log('DOM loaded, checking navigation elements...');
-    console.log('Hamburger:', document.getElementById('hamburger'));
-    console.log('Nav menu:', document.getElementById('nav-menu'));
-    console.log('Nav links:', document.querySelectorAll('nav a'));
-    
-    // Hamburger menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const navOverlay = document.getElementById('nav-overlay');
-    
-    if (hamburger && navOverlay) {
-        hamburger.addEventListener('click', function(e) {
-            console.log('Hamburger clicked!');
-            hamburger.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            console.log('Menu active:', hamburger.classList.contains('active'));
+    // Mobile menu functionality
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    if (mobileMenuToggle && mobileMenu && mobileMenuClose && mobileMenuOverlay) {
+        // Toggle menu
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            mobileMenuToggle.classList.add('active');
         });
-        
-        navOverlay.addEventListener('click', function() {
-            // Commented out for testing - menu stays open
-            // hamburger.classList.remove('active');
-            // navOverlay.classList.remove('active');
+
+        // Close menu
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
         });
-    } else {
-        console.error('Hamburger or navOverlay not found!');
+
+        // Close on overlay click
+        mobileMenuOverlay.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+        });
+
+        // Handle navigation links
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Close menu
+                    mobileMenu.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                    
+                    // Scroll to section
+                    const headerHeight = 70;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     }
     
     const form = document.getElementById('contactForm');

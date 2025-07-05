@@ -22,17 +22,10 @@
         <a href="index.html">
             <img src="logo.png" alt="SAMARQAND Logo" class="site-logo" style="height: 50px; margin-top:10px; margin-bottom:10px;">
         </a>
-        <div class="hamburger" id="hamburger">
+        <div class="mobile-menu-toggle" id="mobile-menu-toggle">
             <span></span>
             <span></span>
             <span></span>
-            <div class="hamburger-menu" id="hamburger-menu">
-                <button class="nav-btn" onclick="scrollToSection('about')">About</button>
-                <button class="nav-btn" onclick="scrollToSection('services')">Our Services</button>
-                <button class="nav-btn" onclick="scrollToSection('products')">Our Products</button>
-                <button class="nav-btn" onclick="scrollToSection('Key-Partners')">Key Partners</button>
-                <button class="nav-btn" onclick="scrollToSection('contact')">Contact Us</button>
-            </div>
         </div>
         <nav id="nav-menu">
             <ul>
@@ -46,7 +39,22 @@
         <button id="lang-toggle" class="back-btn" style="margin-left: 20px;" onclick="window.location.href='index-ar.html'">العربية</button>
     </div>
 </header>
-<div class="nav-overlay" id="nav-overlay"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+        <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+    </div>
+    <div class="mobile-menu-content">
+        <a href="#about" class="mobile-menu-link">About</a>
+        <a href="#services" class="mobile-menu-link">Our Services</a>
+        <a href="#products" class="mobile-menu-link">Our Products</a>
+        <a href="#Key-Partners" class="mobile-menu-link">Key Partners</a>
+        <a href="#contact" class="mobile-menu-link">Contact Us</a>
+    </div>
+</div>
+
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
    
     <section class="hero">
         <video class="bg-video" autoplay loop muted playsinline>

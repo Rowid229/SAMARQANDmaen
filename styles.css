@@ -272,7 +272,10 @@ body {
     #about {
         height: auto !important;
         min-height: unset !important;
-        padding: 32px 8px !important;
+        padding: 0 0 32px 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
     }
 
     .partner-card {
@@ -291,17 +294,21 @@ body {
     .mobile-partner-links a {
         display: block;
         width: 70vw;
-        max-width: 260px;
+        max-width: 280px;
+        height: 160px;
         margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .mobile-partner-links img {
-        width: 100%;
-        height: auto;
+        width: 130px;
+        height: 130px;
         object-fit: contain;
-        border-radius: 12px;
+        border-radius: 100%;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         background: #fff;
-        padding: 8px;
+        padding: 2px;
     }
     .services-cards {
         flex-direction: column !important;
@@ -314,6 +321,14 @@ body {
         width: auto !important;
         max-width: 340px !important;
         margin: 0 auto !important;
+    }
+
+    .contact-form-box,
+    .contact-info {
+        margin-left: 16px;
+        margin-right: 16px;
+        box-sizing: border-box;
+        width: auto;
     }
 }
 @media (min-width: 1001px) {
@@ -1099,6 +1114,13 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* 20px offset from the top when scrolling to anchors */
 }
+@media (max-width: 600px) {
+  html, body {
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
 #contact {
     background: 
         linear-gradient(135deg, rgba(34, 29, 1, 0.85) 0%, rgba(34, 29, 1, 0.85) 100%),
@@ -1608,3 +1630,23 @@ form textarea {
     width: 100%;
   }
 }
+
+@media (max-width: 600px) {
+  #about-title {
+    padding-top: 20px;
+    margin-top: 0 !important;
+  }
+  #partners-title {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-subtitle {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
